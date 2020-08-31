@@ -162,7 +162,7 @@ SWAGGER_SETTINGS = {"DEFAULT_MODEL_RENDERING": "example", "DEEP_LINKING": True}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# Per this patch, this should be prepended with SCRIPT_NAME in production
+# Per this patch, this will be prepended with SCRIPT_NAME in production
 # https://github.com/django/django/pull/11564
 STATIC_URL = "static/"
 

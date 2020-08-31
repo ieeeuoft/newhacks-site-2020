@@ -17,6 +17,7 @@ _application = get_wsgi_application()
 
 
 def application(environ, start_response):
+    # https://stackoverflow.com/questions/47941075/host-django-on-subfolder/47945170#47945170
     script_name = environ.get("HTTP_X_SCRIPT_NAME", "")
     if script_name:
         environ["SCRIPT_NAME"] = script_name
