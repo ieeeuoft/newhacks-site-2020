@@ -4,6 +4,10 @@ on:
   push:
     branches: '**'
 
+env:
+  IMAGE_ROOT: docker.pkg.github.com/${{ github.repository }}
+  STACK_NAME: newhacks-site-2020
+
 jobs:
   backend-checks:
     runs-on: ubuntu-latest
