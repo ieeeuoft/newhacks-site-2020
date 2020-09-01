@@ -151,7 +151,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           overwrite: true
           # scp-action doesn't obey working-directory, runs at repo root
-          source: "deployment/.env,deployment/docker-compose.prod.yml,hackathon_site/static/"
+          source: "deployment/.env,deployment/docker-compose.prod.yml,deployment/deploy.sh,hackathon_site/static/"
           target: "/usr/src/${{ github.repository }}"
           strip_components: 1
       - name: Bring up deployment
@@ -163,4 +163,5 @@ jobs:
           script_stop: true
           script: |
             cd /usr/src/${{ github.repository }}
+            chmod +x deploy.sh
             ./deploy.sh ${{ github.actor }} ${{ secrets.GITHUB_TOKEN }} ${{ env.STACK_NAME }}
