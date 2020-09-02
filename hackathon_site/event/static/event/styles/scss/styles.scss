@@ -93,6 +93,12 @@ strong {
 
     @include responsive(md-down) {
         &Up {
+            top: -66px !important;
+        }
+    }
+
+    @include responsive(sm-down) {
+        &Up {
             top: -58px !important;
         }
     }
@@ -110,7 +116,7 @@ strong {
 }
 
 .purpleLanding {
-    background-image: url("../../images/purple_landing_animate.svg");
+    background-image: url("../../images/purple_landing.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-size: auto 100%;
