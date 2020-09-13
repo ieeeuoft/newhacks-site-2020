@@ -40,7 +40,7 @@ if DEBUG:
     ]
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     DEFAULT_FROM_EMAIL = "webmaster@localhost"
-    
+
 else:
     # NOTE: If you aren't ieee uoft, put your websites here
     ALLOWED_HOSTS = ["ieee.utoronto.ca"]
@@ -48,12 +48,12 @@ else:
         r"^https://ieee\.utoronto.ca:?\d*$",
     ]
 
-    EMAIL_HOST = os.environ["EMAIL_HOST"]
-    EMAIL_PORT = os.environ["EMAIL_PORT"]
-    EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
-    EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
+    EMAIL_HOST = os.environ.get("EMAIL_HOST", None)
+    EMAIL_PORT = os.environ.get("EMAIL_PORT", None)
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", None)
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", None)
     EMAIL_USE_SSL = True
-    DEFAULT_FROM_EMAIL = os.environ["EMAIL_FROM_ADDRESS"]
+    DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_FROM_ADDRESS", "webmaster@localhost")
 
 CORS_ALLOW_CREDENTIALS = True
 
