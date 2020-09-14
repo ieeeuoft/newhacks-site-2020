@@ -385,7 +385,7 @@ strong {
     font-family: font(header), sans-serif;
     background-color: color(secondary);
 
-    &:hover {
+    &:hover, &:focus {
         background-color: #d2a300 !important;
     }
 }
