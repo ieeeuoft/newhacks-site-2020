@@ -205,17 +205,23 @@ else:
 HACKATHON_NAME = "NewHacks"
 CONTACT_EMAIL = DEFAULT_FROM_EMAIL
 
-# REGISTRATION_OPEN_DATE = datetime(2020, 9, 18)
-# REGISTRATION_CLOSE_DATE = datetime(2020, 10, 22)
+# REGISTRATION_OPEN_DATE = datetime(2020, 9, 18, tzinfo=pytz.timezone(TIME_ZONE))
+# REGISTRATION_CLOSE_DATE = datetime(2020, 10, 22, tzinfo=pytz.timezone(TIME_ZONE))
 
 # FOR TESTING ONLY
-REGISTRATION_OPEN_DATE = datetime(2020, 9, 14, 20, 30, 0)
-REGISTRATION_CLOSE_DATE = datetime(2020, 9, 14, 21, 30, 0)
+REGISTRATION_OPEN_DATE = datetime(
+    2020, 9, 14, 20, 40, 0, tzinfo=pytz.timezone(TIME_ZONE)
+)
+REGISTRATION_CLOSE_DATE = datetime(
+    2020, 9, 14, 21, 40, 0, tzinfo=pytz.timezone(TIME_ZONE)
+)
 
-EVENT_START_DATE = datetime(2020, 11, 7, 10, 0, 0)
-EVENT_END_DATE = datetime(2020, 11, 8, 17, 0, 0)
+EVENT_START_DATE = datetime(2020, 11, 7, 10, 0, 0, tzinfo=pytz.timezone(TIME_ZONE))
+EVENT_END_DATE = datetime(2020, 11, 8, 17, 0, 0, tzinfo=pytz.timezone(TIME_ZONE))
 
 # Registration settings
-now = datetime.now()
+# datetime.now() returns the system native time, so this assumes that the system timezone
+# is configured to match TIME_ZONE. We then make the datetime object timezone-aware.
+now = datetime.now().replace(tzinfo=TZ_INFO)
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = REGISTRATION_OPEN_DATE <= now < REGISTRATION_CLOSE_DATE
