@@ -6,18 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registration', '0005_application_program'),
+        ("registration", "0005_application_program"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='application',
-            name='conduct_agree',
-            field=models.BooleanField(help_text='I have read and agree to the <a href="https://docs.google.com/document/d/1Uec_PDknY-9nSMc7QOqSTFb54I71uGX6oZaoTm1u8Q0/">code of conduct</a>.'),
+            model_name="application",
+            name="conduct_agree",
+            field=models.BooleanField(
+                help_text='I have read and agree to the <a href="https://docs.google.com/document/d/1Uec_PDknY-9nSMc7QOqSTFb54I71uGX6oZaoTm1u8Q0/">code of conduct</a>.'
+            ),
         ),
         migrations.AlterField(
-            model_name='application',
-            name='data_agree',
-            field=models.BooleanField(help_text='I consent to have the data in this application collected for event purposes including administration, ranking, and event communication, and to be shared with event sponsors and partners.'),
+            model_name="application",
+            name="data_agree",
+            field=models.BooleanField(
+                help_text="I consent to have the data in this application collected for event purposes including administration, ranking, and event communication, and to be shared with event sponsors and partners."
+            ),
         ),
     ]
