@@ -42,7 +42,7 @@ urlpatterns = [
     ),
     path("registration/", include("registration.urls", namespace="registration")),
     path(
-        "^%s/applications/resumes/<str:filename>" % settings.MEDIA_URL.strip("/"),
+        "%s/applications/resumes/<str:filename>" % settings.MEDIA_URL.strip("/"),
         ResumeView.as_view(),
         name="resume",
     ),
